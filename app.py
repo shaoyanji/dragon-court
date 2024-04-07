@@ -1,11 +1,7 @@
-from flask import Flask
-import os
-
+from flask import Flask, render_template, request, flash, redirect, url_for
+from example_blueprint import example_blueprint
 app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return "Hello World!"
+app.register_blueprint(example_blueprint)
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
