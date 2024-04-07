@@ -1,3 +1,7 @@
+Deploying in kubernetes a UI/UX concept. The Dao that can be named is not the eternal dao.  
+
+Below is the README.md from the fork
+----------------------------------------------------
 # Creating an application with a Python code sample
 
 **Note:** The Python code sample uses the **8081** HTTP port.
