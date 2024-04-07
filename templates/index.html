@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block navbar %}
+<nav class="navbar navbar-default navbar-fixed-top">
+    {% include 'navbar.html' %}
+</nav>
+{% endblock %}
+
+{% block content %}
+    <div id="western" class="container">
+        <ul style="width:auto">
+            <div>
+                <h2>Input</h2>
+                <textarea class="form-control" type="text" id="content"
+                    name="content" placeholder="Begin Typing To Chat..." rows="5"
+                    hx-post="/submit_message"
+                    hx-trigger="input changed delay:500ms, content" 
+                    hx-target="#message-container"
+                    hx-swap="afterbegin"
+                    hx-indicator=".htmx-indicator">
+                </textarea>
+            </div>
+        </ul>
+        <ul>
+            <div>
+                <h2><span class="htmx-indicator"> 
+                    <img src="https://htmx.org/img/bars.svg"/> Searching... 
+                  </span></h2>
+                <main id="message-container">
+                    <p>This is a minimalistic website with a left navbar, dark mode toggle, and using Pico, HTMX, and Alpine.js</p>
+                </main>
+            </div>
+        </ul>
+        <ul>
+            <div>
+                <h2>Output</h2>
+                <main id="output-container">
+                    output
+                </main>
+            </div>
+        </ul>
+    </div>
+            
+
+{% endblock %}
