@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 from example_blueprint import example_blueprint
+import os
 
 app = Flask(__name__)
 app.register_blueprint(example_blueprint)
